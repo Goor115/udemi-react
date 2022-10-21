@@ -4,30 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vannila JS</title>
-    <style>
-      .app {
-        text-align: center;
-      }
-
-      .green-btn {
-        color: white;
-        background-color: green;
-      }
-    </style>
+    <title>React Hello World</title>
   </head>
   <body>
-    <div class="app">
-      <button id="my-button" onclick="changeButton('my-button')">
-        Click me
-      </button>
-    </div>
+    <div id="app"></div>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"
+      crossorigin
+    ></script>
     <script>
-      function changeButton(id) {
-        const myButton = document.getElementById(id);
-        myButton.innerHTML = 'Hello from vanilla JS';
-        myButton.className = 'green-btn';
-      }
+      const helloWorldHeading = React.createElement(
+        'h1',
+        null,
+        'Hello from React'
+      );
+      const container = document.getElementById('app');
+      const root = ReactDOM.createRoot(container);
+      root.render(helloWorldHeading);
     </script>
   </body>
 </html>
