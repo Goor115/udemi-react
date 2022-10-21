@@ -7,7 +7,8 @@
     <title>React Hello World</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="react-app"></div>
+    <div id="vanilla-app"></div>
     <script
       src="https://unpkg.com/react@18/umd/react.development.js"
       crossorigin
@@ -22,9 +23,14 @@
         null,
         'Hello from React'
       );
-      const container = document.getElementById('app');
+      const container = document.getElementById('react-app');
       const root = ReactDOM.createRoot(container);
       root.render(helloWorldHeading);
+    </script>
+    <script>
+      const heading = document.createElement('h1');
+      heading.textContent = 'Hello from Vannila JS';
+      document.getElementById('vanilla-app').appendChild(heading);
     </script>
   </body>
 </html>
