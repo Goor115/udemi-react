@@ -1,2 +1,0 @@
-# udemi-react
-udemi
