@@ -1,8 +1,8 @@
 const App = () => {
-  let buttonText = 'Click me';
+  const [buttonText, setButtonText] = React.useState('Click me');
+
   const onButtonClick = () => {
-    buttonText = 'Hello from React';
-    console.log(buttonText);
+    setButtonText('Hello from React');
   };
   return (
     <div className="app">
