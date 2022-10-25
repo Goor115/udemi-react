@@ -1,16 +1,20 @@
-const App = () => {
-  const [buttonText, setButtonText] = React.useState('Click me');
+const App = ({ initialButtonText }) => {
+  const [buttonText, setButtonText] = React.useState(initialButtonText);
+  const [classList, setclassList] = React.useState('');
 
   const onButtonClick = () => {
     setButtonText('Hello from React');
+    setclassList('green-btn');
   };
   return (
     <div className="app">
-      <button onClick={onButtonClick}>{buttonText}</button>
+      <button className={classList} onClick={onButtonClick}>
+        {buttonText}
+      </button>
     </div>
   );
 };
 
 const container = document.getElementById('app');
 const root = ReactDOM.createRoot(container);
-root.render(<App />);
+root.render(<App initialButtonText="Click me" />);
