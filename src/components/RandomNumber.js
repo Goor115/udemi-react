@@ -1,8 +1,16 @@
+import { useState } from 'react';
+import generateRandomNum from '../utils/generateRandomNum';
+
 function RandomMunber() {
+  const [randomNum, setRanomNum] = useState(generateRandomNum());
+  const changeRendomNum = () => {
+    setRanomNum(generateRandomNum());
+  };
+
   return (
     <div>
-      <h1>100</h1>
-      <button>Generate new random number</button>
+      <h1>{randomNum}</h1>
+      <button onClick={changeRendomNum}>Generate new random number</button>
     </div>
   );
 }
