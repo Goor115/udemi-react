@@ -1,15 +1,11 @@
 import './App.css';
-import MyComponent from './components/MyComponent';
-import MyHead from './components/MyHead';
+import PetInfo from './components/PetInfo';
 
 function App() {
   return (
     <div className="App">
-      <MyComponent />
-      <MyHead />
-      <MyComponent />
-      <MyHead />
-      <MyComponent />
+      <PetInfo animal="cat" age={5} />
+      <PetInfo animal="dog" age={7} />
     </div>
   );
 }
