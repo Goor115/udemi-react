@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import generateRandomNum from '../utils/generateRandomNum';
 
-function RandomMunber() {
-  const [randomNum, setRanomNum] = useState(generateRandomNum());
+function RandomMunber({ maxNum }) {
+  const [randomNum, setRanomNum] = useState(generateRandomNum(maxNum));
   const changeRendomNum = () => {
-    setRanomNum(generateRandomNum());
+    setRanomNum(generateRandomNum(maxNum));
   };
 
   return (
