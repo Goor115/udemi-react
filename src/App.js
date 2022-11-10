@@ -21,7 +21,7 @@ function App() {
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
-      {count > 0 && <ResetButton count={count} onClick={resetCount} />}
+      {count > 0 && <ResetButton onClick={resetCount} />}
     </div>
   );
 }

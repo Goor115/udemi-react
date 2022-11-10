@@ -1,4 +1,4 @@
-function ResetButton({ onClick, count }) {
+function ResetButton({ onClick }) {
   const buttonStyle = { backgroundColor: 'lightgreen' };
   return (
     <div>
