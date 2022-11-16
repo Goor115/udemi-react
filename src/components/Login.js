@@ -1,9 +1,13 @@
+import { useState } from 'react';
+
 function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   function hendlFromSubmit(event) {
     event.preventDefault();
     const userData = {
-      username: event.target.username.value,
-      password: event.target.password.value,
+      username,
+      password,
     };
     alert(JSON.stringify(userData));
   }
@@ -13,11 +17,19 @@ function Login() {
       <form onSubmit={hendlFromSubmit}>
         <label>
           User name:
-          <input type="text" name="username" />
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </label>
         <label>
           Password:
-          <input type="password" name="password" />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </label>
         <button type="submit">Login</button>
       </form>
