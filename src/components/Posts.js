@@ -4,11 +4,14 @@ import Post from './Post';
 function Posts() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((res) => res.json())
       .then((posts) => setPosts(posts))
-      .catch((error) => setError(error.messege));
+      .catch((error) => setError(error.message))
+      .finally(() => setIsLoading(false));
   }, []);
 
   if (error) {
@@ -16,11 +19,15 @@ function Posts() {
   }
 
   return (
-    <div>
-      {posts.map((post) => (
-        <Post key={post.id} {...post} />
-      ))}
-    </div>
+    <>
+      <h1>Post</h1>
+      <hr />
+      {isLoading ? (
+        <h1>isLoading...</h1>
+      ) : (
+        posts.map((post) => <Post key={post.id} {...post} />)
+      )}
+    </>
   );
 }
 
