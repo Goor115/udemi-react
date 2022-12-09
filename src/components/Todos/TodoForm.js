@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function TodoForm(addTodo) {
+function TodoForm({ addTodo }) {
   const [text, setText] = useState('');
   const onSubmitHendler = (event) => {
     event.preventDefault();
