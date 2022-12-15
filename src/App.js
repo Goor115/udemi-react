@@ -10,7 +10,7 @@ function App() {
   const addTodoHandler = (text) => {
     const newTodo = {
       text: text,
-      isComplet: false,
+      isCompletd: false,
       id: uuidv4(),
     };
 
@@ -21,11 +21,25 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const toggleTodoHendler = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id
+          ? { ...todo, isCompletd: !todo.isCompleted }
+          : { ...todo }
+      )
+    );
+  };
+
   return (
     <div className="App">
       <h1>Todo app</h1>
       <TodoForm addTodo={addTodoHandler} />
-      <TodoList todos={todos} deleteTodo={deleteTodoHendler} />
+      <TodoList
+        todos={todos}
+        deleteTodo={deleteTodoHendler}
+        toggleTodo={toggleTodoHendler}
+      />
     </div>
   );
 }
