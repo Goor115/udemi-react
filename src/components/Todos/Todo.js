@@ -17,7 +17,7 @@ function Todo({ todo, deleteTodo, toggleTodo }) {
       />
       <FaCheck
         className={styles.checkIcon}
-        toggleTodo={() => toggleTodo(todo.id)}
+        onClick={() => toggleTodo(todo.id)}
       />
     </div>
   );

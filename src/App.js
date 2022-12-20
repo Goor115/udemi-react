@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import TodoForm from './components/Todos/TodoForm';
 import TodoList from './components/Todos/TodoList';
+import TodosActions from './components/Todos/TodosActions';
 import './App.css';
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     setTodos(
       todos.map((todo) =>
         todo.id === id
-          ? { ...todo, isCompletd: !todo.isCompleted }
+          ? { ...todo, isCompleted: !todo.isCompleted }
           : { ...todo }
       )
     );
@@ -35,6 +36,7 @@ function App() {
     <div className="App">
       <h1>Todo app</h1>
       <TodoForm addTodo={addTodoHandler} />
+      <TodosActions />
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHendler}
