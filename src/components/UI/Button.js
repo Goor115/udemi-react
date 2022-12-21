@@ -2,7 +2,12 @@ import styles from './Button.module.css';
 
 function Button({ onClick, children, title, disabled = false }) {
   return (
-    <button onClick={onClick} title={title} disabled={disabled}>
+    <button
+      className={styles.button}
+      onClick={onClick}
+      title={title}
+      disabled={disabled}
+    >
       {children}
     </button>
   );
