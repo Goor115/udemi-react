@@ -6,6 +6,15 @@ a {
   color: lightblue;
 }
 
+nav {
+  background-color: darkslategray;
+  padding: 5px;
+}
+
+nav a {
+  margin: 15px;
+}
+
 h1 {
   font-size: 90px;
   margin-top: 20px;
