@@ -5,8 +5,10 @@ const Menu = () => {
   return (
     <nav>
       <NavLink
-        className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
-        to="/"
+        style={({ isActive }) =>
+          isActive ? { color: 'lightyellow', textDecoration: 'none' } : {}
+        }
+        to="."
         end
       >
         Home
