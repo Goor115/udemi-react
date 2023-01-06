@@ -5,7 +5,7 @@ const MainLayot = () => {
   return (
     <>
       <Menu />
-      <Outlet />;
+      <Outlet />
     </>
   );
 };
